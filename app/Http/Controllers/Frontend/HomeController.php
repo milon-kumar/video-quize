@@ -13,13 +13,14 @@ class HomeController extends Controller
     {
         return Inertia::render(self::$component.'Home/Home',[
             'title'=>"Home",
+            "metaDescription"=>"This is my meta description"
         ]);
     }
 
-    public function quize()
+    public function quiz()
     {
-        return Inertia::render(self::$component.'Quize/Quize',[
-            'title'=>"Quize"
+        return Inertia::render(self::$component.'Quiz/Quiz',[
+            'title'=>"Quiz"
         ]);
     }
 
