@@ -21,6 +21,13 @@ const Header = () => {
                         <li className=""><Link href="/logout" method="post" >Logout</Link></li>
                     </ul>
                 </div>
+            <div className="my-container">
+                <iframe className="w-full h-[450px]"
+                        src="https://www.youtube-nocookie.com/embed/7PIji8OubXU?si=f3Cq-VedmEn66NUQ&amp;start=136"
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen></iframe>
+            </div>
         </Fragment>
     );
 };
