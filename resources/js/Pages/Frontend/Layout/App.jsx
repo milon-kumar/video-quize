@@ -9,7 +9,9 @@ const App = ({title,children}) => {
                 <title>{title ?? null}</title>
             </Head>
             <Header />
-            {children}
+            <div className="my-container">
+                {children}
+            </div>
         </Fragment>
     );
 };

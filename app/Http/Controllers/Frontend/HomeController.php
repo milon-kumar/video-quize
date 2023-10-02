@@ -26,7 +26,13 @@ class HomeController extends Controller
     public function leaderBoard()
     {
         return Inertia::render(self::$component.'LeaderBoard/LeaderBoard',[
-            'title'=>"Leader Board"
+            'title'=>"Leader Board",
+            'time'=>now()->toTimeString(),
         ]);
+    }
+
+    public function logout()
+    {
+        dd('Logout Success');
     }
 }
