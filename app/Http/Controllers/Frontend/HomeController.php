@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\In;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -17,10 +19,23 @@ class HomeController extends Controller
         ]);
     }
 
-    public function quiz()
+    public static function quiz()
     {
         return Inertia::render(self::$component.'Quiz/Quiz',[
             'title'=>"Quiz"
+        ]);
+    }
+
+    public function user()
+    {
+
+        return User::paginate(10);
+
+        return Inertia::render(self::$component.'User/User',[
+            'users'=>User::all()->map(fn($user)=>[
+                'name'=>$user->name,
+                'email'=>$user->email
+            ]),
         ]);
     }
 
