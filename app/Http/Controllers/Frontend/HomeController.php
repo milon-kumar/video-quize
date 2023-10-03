@@ -29,13 +29,10 @@ class HomeController extends Controller
     public function user()
     {
 
-        return User::paginate(10);
+        //return User::paginate(10);
 
         return Inertia::render(self::$component.'User/User',[
-            'users'=>User::all()->map(fn($user)=>[
-                'name'=>$user->name,
-                'email'=>$user->email
-            ]),
+            'users'=>User::paginate(10)
         ]);
     }
 
